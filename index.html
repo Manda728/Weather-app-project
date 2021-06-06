@@ -12,7 +12,9 @@
 </head>
 <body>
     <div class="container">
+        <div class="weather-app-wrapper">
       <div class="weather-app">
+          <div class="overview">
     <h1>
         New York
     </h1>
@@ -24,10 +26,17 @@
             Clear
         </li>
     </ul>
+    </div>
     <div class="row">
         <div class="col-md-6">
-        <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Sun-icon"> 
-        12°C | °F
+        <div class="clearfix weather-temperature">
+        <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Sun-icon"
+        class="float-left"
+        /> 
+        <strong>
+        12</strong><span class="units">°C |<a href="#"> °F</a> 
+        </span>
+        </div>
         </div>
         <div class="col-md-6">
             <ul>
@@ -45,6 +54,8 @@
         </div>
     </div>
     
+   
+    </div> 
     <small>
       <a href="https://github.com/Manda728/Weather-app-project" target="_blank">
       Open-source code</a>, by A
