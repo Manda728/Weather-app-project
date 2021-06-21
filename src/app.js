@@ -1,18 +1,22 @@
 function formatDate(timestamp) {
-    let date = new Date(timestamp);
-    let hours = date.getHours();
+    let now = new Date(timestamp);
+    let hours = now.getHours();
     if (hours < 10) {
         hours =`0${hours}`;
     }
-    let minutes = date.getMinutes();
+    let minutes = now.getMinutes();
     if (minutes < 10) {
         minutes =`0${minutes}`;
     }
+    let date = now.getDate();
+    let months = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+    let month = months[now.getMonth()]; 
     let days = [
         "Sunday", "Monday", "Tuesday", 
         "Wednesday", "Thursday", "Friday", "Saturday"];
-    let day = days[date.getDay()];
-return `${day} ${hours}:${minutes}`;
+    let day = days[now.getDay()];
+return `${day}, ${date} ${month}, ${hours}:${minutes}`;
 }
 
 function formatDay(timestamp) {
@@ -22,6 +26,7 @@ let days = ["Sun", "Mon", "Tue",
         "Wed", "Thu", "Fri", "Sat"];
 
 return days[day];
+
 }
 
 function displayForecast(response) {
@@ -71,21 +76,20 @@ function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
     let weatherCondition = document.querySelector("#weather-condition");
-    let humidityElement = document.querySelector("#humidity");
+    let feelsLikeElement = document.querySelector("#feels-like");
+		let humidityElement = document.querySelector("#humidity");
     let windElement = document.querySelector("#wind");
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
 
-   
-
      celsiusTemperature = response.data.main.temp;
-
 
 
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
     cityElement.innerHTML = response.data.name; 
     weatherCondition.innerHTML = response.data.weather[0].description;
-    humidityElement.innerHTML = response.data.main.humidity;
+    feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
+		humidityElement.innerHTML = response.data.main.humidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
     iconElement.setAttribute(
@@ -167,4 +171,4 @@ let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", displayCurrentWeather);
 
 
-search("New York");
+search("Gothenburg");

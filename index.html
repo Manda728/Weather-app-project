@@ -16,7 +16,7 @@
     <div class="container">
         <div class="weather-app-wrapper">
       <div class="weather-app">
-       <form id="search-form" class="mb-3">
+        <form id="search-form" class="mb-3">
         <div class="row">
             <div class="col-md-6">
         <input 
@@ -32,23 +32,24 @@
         class="btn btn-primary w-100"
         id="search-btn"
         />
-        
         </div>
+        
         <div class="col-md-3">
             <input type="submit" value="Current" class="btn btn-success w-100" id="current-location"/>
         </div>
         </div>
+    
        </form>   
-          <div class="overview">
-    <h1 id="city"></h1>
-    <ul>
+    
+       <div class="overview">
+       <ul><h1 id="city"></h1>
         <li><span id="date"></span>
         </li>
-        <li id="weather-condition">
-            
+        <li id="weather-condition">   
         </li>
-    </ul>
+        </ul>
     </div>
+    
     <div class="row">
         <div class="col-md-6">
         <div class="clearfix weather-temperature">
@@ -58,32 +59,36 @@
         /> 
         <strong id="temperature">
         </strong><span class="units">
-            <a href="#" id="celsius-link" class="active"> °C</a> 
+            <a href="#" id="celsius-link" class="celsius"> °C</a> 
             |<a href="#" id="fahrenheit-link"> °F</a> 
         </span>
+        
         </div>
         </div>
+        
         <div class="col-md-6">
-            <ul>
+            <ul> <li>
+                Feels like: <span id="feels-like"></span>°C
+                </li>
                 <li>
                   Humidity: <span id="humidity"></span>%
                 </li>
                 <li>
                   Wind: <span id="wind"></span> m/s
                 </li>
-            </ul>
+            </ul>    
 
         </div>
     </div>
-    
+    <hr>
     <div class="weather-forecast" id="forecast">
     
      </div>
     </div>
     </div> 
-    <small>
+    <small id ="paragraph">
       <a href="https://github.com/Manda728/Weather-app-project" target="_blank">
-      Open-source code</a>, by A
+      Open-source code</a> by Amanda, hosted on Netlify
     </small>
     </div>
     </div>
